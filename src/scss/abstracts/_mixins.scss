@@ -1,0 +1,62 @@
+@mixin position($position, $top, $left, $bottom, $right, $width, $height) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+  width: $width;
+  height: $height;
+}
+
+@mixin align($flex, $align-items, $justify-content, $height) {
+  display: $flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  height: $height;
+}
+
+@mixin button(
+  $bg,
+  $color,
+  $text-decoration,
+  $height,
+  $line-height,
+  $display,
+  $font-size,
+  $font-weight,
+  $border-radius,
+  $padding,
+  $border,
+  $outline,
+  $cursor,
+  $text-transform
+) {
+  background: $bg;
+  color: $color;
+  text-decoration: $text-decoration;
+  height: $height;
+  line-height: $line-height;
+  display: $display;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  border-radius: $border-radius;
+  padding: $padding;
+  border: $border;
+  outline: $outline;
+  cursor: $cursor;
+  text-transform: $text-transform;
+}
+
+@mixin animation($name, $duration, $time-function, $translateY1, $translateY2) {
+  animation: $name $duration $time-function;
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      transform: translateY($translateY1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY($translateY2);
+    }
+  }
+}

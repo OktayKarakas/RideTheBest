@@ -1,0 +1,10 @@
+@use "./scss/base/base" as *;
+@use "./scss/components/header" as *;
+@use "./scss/utils/utils" as *;
+@use "./scss/components/modal" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
