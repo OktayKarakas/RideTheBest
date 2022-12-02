@@ -2,20 +2,20 @@ import React, { useState } from 'react'
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 import { Modal, Input, Space, Button } from 'antd'
 
-const Register = ({
+const Login = ({
   onClose,
   isOpened,
-  isWantLogin,
+  isWantRegister,
 }: {
   onClose: any
   isOpened: any
-  isWantLogin: any
+  isWantRegister: any
 }) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false)
   return (
     <>
       <Modal
-        title="Register"
+        title="Login"
         centered
         onOk={onClose}
         okText="Register"
@@ -28,18 +28,17 @@ const Register = ({
         cancelButtonProps={{ style: { display: 'none' } }}
         footer={[
           <Button key="submit" type="primary" onClick={onClose}>
-            Register
+            Login
           </Button>,
-          <Button key="back" onClick={isWantLogin}>
-            Already Have an Account?
+          <Button key="back" onClick={isWantRegister}>
+            Don't have an account?
           </Button>,
         ]}
       >
         <Space direction="vertical" style={{ width: '100%' }}>
-          <Input placeholder="Enter name" />
           <Input placeholder="Enter email" />
           <Input.Password
-            placeholder="Create Password"
+            placeholder="Password"
             iconRender={(visible) =>
               visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
             }
@@ -50,4 +49,4 @@ const Register = ({
   )
 }
 
-export default Register
+export default Login

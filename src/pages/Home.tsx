@@ -1,9 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Header from '../components/Header'
+import Login from '../components/Login'
 import Register from '../components/Register'
 
 const Home = () => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(Boolean)
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(Boolean)
+  const [isWantLogin, setIsWantLogin] = useState(Boolean)
   return (
     <div>
       <Header>
@@ -22,6 +25,21 @@ const Home = () => {
           return isRegisterModalOpen
         }}
         isOpened={isRegisterModalOpen}
+        isWantLogin={() => {
+          setIsLoginModalOpen(true)
+          setIsRegisterModalOpen(false)
+        }}
+      />
+      <Login
+        onClose={() => {
+          setIsLoginModalOpen(false)
+          return isLoginModalOpen
+        }}
+        isOpened={isLoginModalOpen}
+        isWantRegister={() => {
+          setIsRegisterModalOpen(true)
+          setIsLoginModalOpen(false)
+        }}
       />
     </div>
   )
