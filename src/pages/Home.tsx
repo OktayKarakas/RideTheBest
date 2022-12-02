@@ -1,20 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Header from '../components/Header'
-import Modal from '../components/Modal'
+import Register from '../components/Register'
 
 const Home = () => {
-  const [state] = useState({
-    heading: 'We are travel friends',
-    paragraph:
-      'Come and join us we travel the most famous and beautiful places  in the world',
-  })
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(Boolean)
   return (
-    <>
-      <Header heading={state.heading} paragraph={state.paragraph}>
-        <button className="btn-default">Get Started</button>
+    <div>
+      <Header>
+        <button
+          className="btn-default"
+          onClick={() => {
+            setIsRegisterModalOpen(true)
+          }}
+        >
+          Get Started
+        </button>
       </Header>
-      <Modal />
-    </>
+      <Register
+        onClose={() => {
+          setIsRegisterModalOpen(false)
+          return isRegisterModalOpen
+        }}
+        isOpened={isRegisterModalOpen}
+      />
+    </div>
   )
 }
 
