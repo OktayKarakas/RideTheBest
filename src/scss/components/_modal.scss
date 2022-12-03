@@ -1,16 +1,11 @@
-@use "../abstracts/mixins" as *;
-@use "../abstracts/variables" as *;
+@use "../abstracts/index" as *;
 
-.modal {
-  @include position(fixed, 0, 0, 0, 0, 100%, 100%);
-  @include align(flex, center, center, null);
-  background: rgba(0, 0, 0, 0.4);
+.register-modal {
+  @include animation(modalAnimate, 0.3s, linear, 2rem, 0);
 
-  &__body {
-    background: $white;
-    width: 38rem;
-    height: auto;
-    padding: 2rem;
-    font-size: 1.4rem;
+  .ant-modal-content {
+    .ant-modal-footer {
+      text-align: left;
+    }
   }
 }
