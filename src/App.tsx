@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import NavProvider from './providers/NavProvider'
 import Toggle from './components/Toggle'
+import { HelmetProvider } from 'react-helmet-async'
 
 function App() {
   return (
@@ -13,11 +14,13 @@ function App() {
       <NavProvider>
         <Toggle />
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <HelmetProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </HelmetProvider>
       </NavProvider>
     </BrowserRouter>
   )

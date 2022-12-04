@@ -60,3 +60,12 @@
     }
   }
 }
+
+@mixin toggleSpans($display, $bg, $width, $height, $margin-top) {
+  display: $display;
+  background: $bg;
+  width: $width;
+  height: $height;
+  margin-top: $margin-top;
+  transition: all 0.3s ease-in-out;
+}

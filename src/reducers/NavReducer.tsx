@@ -1,5 +1,9 @@
 const NavReducer = (state: boolean, action: any) => {
-  return state
+  if (action.type === 'TOGGLE_NAV') {
+    return !state
+  } else {
+    return state
+  }
 }
 
 export default NavReducer

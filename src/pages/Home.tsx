@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import Header from '../components/Header'
 import Login from '../components/Login'
 import Register from '../components/Register'
@@ -9,6 +10,9 @@ const Home = () => {
   const [isWantLogin, setIsWantLogin] = useState(Boolean)
   return (
     <div>
+      <Helmet>
+        <title>RideTheBest | HOME</title>
+      </Helmet>
       <Header>
         <button
           className="btn-default"
